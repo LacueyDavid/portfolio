@@ -1,33 +1,124 @@
-# React + TypeScript + Vite
+# 🎨 Portfolio - Lacuey David
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio personnel développé avec React, TypeScript et Tailwind CSS.
 
-Currently, two official plugins are available:
+## 🚀 Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** - Framework UI
+- **TypeScript 5.9** - Typage statique
+- **Tailwind CSS 3.4** - Framework CSS utilitaire
+- **Vite 7** - Build tool ultra-rapide
+- **PostCSS** - Transformation CSS
 
-## React Compiler
+## 📁 Structure du projet
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+src/
+├── components/          # Composants réutilisables
+│   ├── Header.tsx      # Navigation
+│   ├── Hero.tsx        # Section profil
+│   ├── PostCard.tsx    # Carte article
+│   ├── RecentPosts.tsx # Section articles
+│   ├── ProjectCard.tsx # Carte projet
+│   ├── Projects.tsx    # Section projets
+│   ├── Divider.tsx     # Séparateur
+│   ├── Footer.tsx      # Pied de page
+│   └── index.ts        # Exports
+├── data/
+│   └── content.ts      # Données (posts, projets)
+├── types/
+│   └── index.ts        # Types TypeScript
+├── imgs/               # Images et assets
+├── App.tsx             # Composant principal
+└── main.tsx            # Point d'entrée
+```
 
-## Expanding the ESLint configuration
+## ⚡ Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Cloner le repository
+git clone https://github.com/LacueyDavid/portefolio.git
+cd portefolio
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
+npm run dev
+```
+
+## 🛠️ Scripts disponibles
+
+```bash
+npm run dev          # Démarre le serveur de développement
+npm run build        # Build pour la production
+npm run preview      # Prévisualise le build
+npm run lint         # Vérifie le code avec ESLint
+```
+
+## 🎯 Fonctionnalités
+
+- ✅ Design responsive (mobile-first)
+- ✅ Architecture modulaire avec composants
+- ✅ Type-safety avec TypeScript
+- ✅ Styles avec Tailwind CSS
+- ✅ Images optimisées avec Vite
+- ✅ SEO-friendly
+
+## 📝 Ajouter du contenu
+
+### Ajouter un article
+
+Édite `src/data/content.ts` :
+
+```typescript
+export const posts: Post[] = [
   {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+    title: "Mon nouvel article",
+    date: "10 Nov 2025",
+    tags: "React, TypeScript",
+    description: "Description de l'article...",
+  },
+  // ... autres articles
+];
+```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
+### Ajouter un projet
+
+Édite `src/data/content.ts` :
+
+```typescript
+export const projects: Project[] = [
+  {
+    title: "Mon nouveau projet",
+    year: "2025",
+    type: "Web App",
+    description: "Description du projet...",
+    imageUrl: img4, // Importer l'image au début du fichier
+  },
+  // ... autres projets
+];
+```
+
+## 🎨 Personnalisation
+
+Les couleurs et styles peuvent être personnalisés dans :
+- `tailwind.config.cjs` - Configuration Tailwind
+- `src/index.css` - Styles globaux
+
+## 📄 License
+
+Ce projet est sous licence MIT.
+
+## 👤 Auteur
+
+**Lacuey David**
+- GitHub: [@LacueyDavid](https://github.com/LacueyDavid)
+- École: 42
+
+---
+
+💼 Actuellement à la recherche d'un stage de 6 mois
       tseslint.configs.stylisticTypeChecked,
 
       // Other configs...
