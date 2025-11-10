@@ -1,0 +1,8 @@
+export { default as Header } from "./Header";
+export { default as Hero } from "./Hero";
+export { default as PostCard } from "./PostCard";
+export { default as RecentPosts } from "./RecentPosts";
+export { default as ProjectCard } from "./ProjectCard";
+export { default as Projects } from "./Projects";
+export { default as Divider } from "./Divider";
+export { default as Footer } from "./Footer";

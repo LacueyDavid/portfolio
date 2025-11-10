@@ -1,0 +1,133 @@
+# Proposition de refacto massif pour `src/App.css`
+
+But / Why
+- Objectif : réduire la surface CSS, supprimer les classes redondantes, améliorer la sémantique des classes et faciliter la maintenance sans casser l'apparence actuelle.
+- Outcome attendu : un `src/App.css` plus petit, organisé en sections réutilisables, avec une map claire pour migrer JSX → nouvelles classes et une check-list de validation.
+
+Contrat (inputs / outputs / critères de succès)
+- Inputs : code actuel (`src/App.tsx`, `src/App.css`, `src/App.css.bak`).
+- Output : proposition de refacto (ce fichier) + patch minimal pour migrer JSX et CSS.
+- Critères de succès : visuellement identique (ou très proche) après migration; pas d'images cassées; Prettier + tsc green.
+
+Résumé des problématiques relevées
+- beaucoup de classes répétées (ex : `.line`, `.line2`, `.line3`), règles dupliquées dans les media queries,
+- sélecteurs trop verbeux (ex : `.featured-work-container-1-img`) et nommage peu sémantique,
+- chemins d'images parfois relatifs sans `./`, pouvant empêcher la résolution par Vite,
+- règles similaires copiées pour chaque variante (1/2/3) plutôt que factorisées.
+
+Stratégie de refactor (haute-niveau)
+1. Définir un ensemble restreint de classes sémantiques et réutilisables (ex : .container, .header, .hero, .profile, .card, .separator, .work, .work-image).
+2. Fusionner variantes visuelles identiques en classes modulaires (ex : .work-image--small, .work-image--wide si besoin) plutôt que `featured-work-container-1-img`.
+3. Centraliser les variables et reset (box-sizing, fonts, couleurs majeures) en haut du fichier.
+4. Factoriser media queries en utilisant les mêmes noms et en ne changeant que les propriétés qui diffèrent.
+5. Migrer `App.tsx` : remplacer les anciennes className par les nouvelles (automatique via patch ou search/replace), tester.
+6. Lancer Prettier et TypeScript, démarrer dev server pour vérification visuelle.
+
+Mapping proposé (exemples)
+- .header                   → .site-header
+- .header a                 → .site-nav__link
+- .profile                  → .hero
+- .profile-infos            → .hero__content
+- .div-anim-container       → .hero__avatar-wrap
+- .profile-img              → .hero__avatar
+- .recent-posts             → .section--posts
+- .recent-post-container    → .card
+- .recent-post-title/date/description → .card__title / .card__meta / .card__body
+- .featured-works           → .section--works
+- .featured-work-container-*→ .work (réutilisable)
+- .featured-work-infos      → .work__content
+- .featured-work-container-*-img → .work__img (avec data-index si nécessaire)
+- .line / .line2 / .line3   → .separator
+- .social-networks          → .social
+
+Structure cible du fichier CSS (ordre)
+1. Variables / reset
+2. Utilitaires globaux (container, grid, hidden, text-center...)
+3. Header / nav
+4. Hero / profile
+5. Section : posts (card)
+6. Section : works (work + work__img)
+7. Social / footer
+8. Media queries (groupées, triées par breakpoint)
+
+Exemple minimal (à placer dans `src/App.css` après refacto)
+
+:root {
+  --color-bg: #fff;
+  --color-text: #21243d;
+  --accent: #00a8cc;
+  --accent-cta: #ff6464;
+  --max-width: 850px;
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin:0; padding:0; font-family: "Heebo", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:var(--color-text); background:var(--color-bg); }
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.site-header { position:fixed; inset:0 0 auto 0; display:flex; justify-content:flex-end; gap: 33px; padding:0 60px 0 0; background:var(--color-bg); z-index:100; }
+.site-nav__link { text-decoration:none; color:inherit; font-weight:500; font-size:20px; padding:27px 0; }
+.site-header .imgmenu { display:none; width:40px; height:40px; background-size:40px; background-repeat:no-repeat; background-image:url("./imgs/menu.svg"); }
+
+/* Hero */
+.hero { display:flex; gap:2%; padding:127px 20px 0; }
+.hero__content { flex:1; }
+.hero__avatar-wrap { width:243px; height:243px; position:relative; }
+.hero__avatar { width:243px; height:243px; border-radius:50%; background-image:url("./imgs/david.png"); background-size:275px; background-position:-10px 0; }
+
+/* Cards */
+.card { background:#fff; border-radius:5px; padding:20px; }
+.card__title { font-weight:700; font-size:26px; margin:0; }
+.card__meta { color:var(--color-text); font-size:18px; margin-top:20px; }
+.card__body { font-size:16px; margin-top:20px; line-height:1.45; }
+
+/* Works */
+.section--works { padding:20px 0; }
+.work { display:flex; gap:18px; padding:20px 0; align-items:flex-start; }
+.work__img { width:246px; height:180px; border-radius:5px; background-position:center; background-size:cover; }
+.work__content { display:flex; flex-direction:column; gap:22px; }
+.work__meta { display:flex; gap:10px; align-items:center; }
+
+.separator { height:2px; background:#e0e0e0; width:100%; margin:0; }
+
+/* Social / footer */
+.social { display:flex; justify-content:center; gap:35px; padding:135px 0 25px; }
+
+/* Responsive — exemple */
+@media (max-width:850px) {
+  .hero { flex-direction:column; align-items:center; }
+  .site-header { padding:0 20px 0 0; }
+  .site-header .imgmenu { display:flex; }
+  .work { flex-direction:column; align-items:center; }
+  .work__img { max-width:100%; height:230px; }
+}
+
+Migration plan (étapes concrètes)
+1. Créer un fichier `src/app.css.idea` (ce fichier) + backup `src/App.css.bak` (déjà présent).
+2. Appliquer un patch automatique pour :
+   - remplacer les className dans `src/App.tsx` selon la map proposée (ex : `.featured-work-container-1` → `.work`).
+   - regrouper les trois `.line*` en `.separator` (ou `.line`) dans JSX.
+3. Remplacer `src/App.css` par la version refactorisée (gardez le backup). Commencez par la version minimale ci-dessus.
+4. Lancer :
+   - `npx prettier --write src/App.css src/App.tsx`
+   - `npx tsc --noEmit`
+   - `npm run dev` pour vérifier visuellement.
+5. Ajustements visuels mineurs (padding/spacing/colors) si nécessaire.
+
+Checklist de validation
+- [ ] Toutes les images s'affichent (vérifier console du dev server pour 404 sur assets)
+- [ ] Aucun avertissement TypeScript dû à import de CSS/URL
+- [ ] Prettier passe
+- [ ] Visuel comparé à l'original : header, hero, posts, works et footer
+
+Notes et recommandations
+- Faites la migration en petits commits atomiques (1 commit pour les remplacements JSX, 1 commit pour le nouveau CSS, 1 commit pour fixes visuels). Ainsi on peut revenir en arrière rapidement.
+- Si vous préférez garder les noms existants pour éviter de toucher `src/App.tsx`, on peut créer des alias CSS : `.featured-work-container-1 { @extend .work }` — mais `@extend` n'existe pas dans plain CSS; il faudrait Sass. Le vrai bénéfice vient de changer le HTML/JSX pour utiliser des classes sémantiques.
+- Je peux générer automatiquement les patches pour `src/App.tsx` et `src/App.css` si vous me donnez le feu vert; je testerai Prettier et `tsc` ensuite.
+
+Fin.
+
+---
+Fichier généré automatiquement — si vous voulez que j'applique ce plan maintenant, dites "applique le refacto" et j'exécuterai les remplacements et tests (je ferai un backup avant toute modification).
