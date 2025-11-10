@@ -2,7 +2,7 @@ import type { Post, Project } from "../types";
 
 const img1 = new URL("../imgs/1.png", import.meta.url).href;
 const img2 = new URL("../imgs/2.png", import.meta.url).href;
-const img3 = new URL("../imgs/3.png", import.meta.url).href;
+const minishell = new URL("../imgs/minishell.png", import.meta.url).href;
 
 export const posts: Post[] = [
   {
@@ -39,11 +39,11 @@ export const projects: Project[] = [
     imageUrl: img2,
   },
   {
-    title: "36 Days of Malayalam type",
-    year: "2018",
-    type: "Typography",
+    title: "Minishell",
+    year: "2023",
+    type: "C99",
     description:
-      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.\nVelit officia consequat duis enim velit mollit.\nExercitation veniam consequat sunt nostrud amet.",
-    imageUrl: img3,
+      "shell minimaliste inspiré de bash. L'objectif est de comprendre en profondeur le fonctionnement des processus, de la gestion des signaux, et de l'exécution de commandes dans un environnement UNIX.",
+    imageUrl: minishell,
   },
 ];

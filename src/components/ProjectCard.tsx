@@ -4,7 +4,7 @@ function ProjectCard({ title, year, type, description, imageUrl }: Project) {
   return (
     <div className="flex gap-5 py-5 items-start flex-col md:flex-row">
       <div
-        className="w-[546px] h-[180px] rounded bg-center bg-no-repeat bg-cover"
+        className="w-[246px] h-[180px] rounded bg-top-left bg-no-repeat bg-cover flex-shrink-0"
         style={{ backgroundImage: `url('${imageUrl}')` }}
       />
       <div className="flex flex-col gap-6 pl-0 md:pl-5">
