@@ -103,6 +103,7 @@ export const projects: Project[] = [
 ## 🎨 Personnalisation
 
 Les couleurs et styles peuvent être personnalisés dans :
+
 - `tailwind.config.cjs` - Configuration Tailwind
 - `src/index.css` - Styles globaux
 
@@ -113,13 +114,14 @@ Ce projet est sous licence MIT.
 ## 👤 Auteur
 
 **Lacuey David**
+
 - GitHub: [@LacueyDavid](https://github.com/LacueyDavid)
 - École: 42
 
 ---
 
 💼 Actuellement à la recherche d'un stage de 6 mois
-      tseslint.configs.stylisticTypeChecked,
+tseslint.configs.stylisticTypeChecked,
 
       // Other configs...
     ],
@@ -130,9 +132,11 @@ Ce projet est sous licence MIT.
       },
       // other options...
     },
-  },
+
+},
 ])
-```
+
+````
 
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
@@ -161,4 +165,4 @@ export default defineConfig([
     },
   },
 ])
-```
+````
