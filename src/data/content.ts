@@ -32,15 +32,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/LacueyDavid/Minishell",
   },
   {
-    title: "Minishell",
-    year: "2023",
-    type: "C",
-    description:
-      "shell minimaliste inspiré de bash. L'objectif est de comprendre en profondeur le fonctionnement des processus, de la gestion des signaux, et de l'exécution de commandes dans un environnement UNIX.",
-    imageUrl: minishell,
-    githubUrl: "https://github.com/LacueyDavid/Minishell",
-  },
-  {
     title: "FDF - Wireframe",
     year: "2023",
     type: "C",

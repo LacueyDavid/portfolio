@@ -1,4 +1,6 @@
 import React from "react";
+import Sun from "./icons/Sun";
+import Moon from "./icons/Moon";
 
 export default function ThemeToggle() {
   const [theme, setTheme] = React.useState<"light" | "dark">(() => {
@@ -23,13 +25,36 @@ export default function ThemeToggle() {
     }
   }, [theme]);
 
+  const toggle = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
+
+  const onKey = (e: React.KeyboardEvent<SVGElement>) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggle();
+    }
+  };
+
   return (
-    <button
-      aria-label="Toggle theme"
-      onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
-      className="p-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
-    >
-      {theme === "dark" ? "🌙" : "☀️"}
-    </button>
+    <>
+      {theme === "dark" ? (
+        <Moon
+          className="w-6 h-6 text-white cursor-pointer transition-colors"
+          title="Switch to light mode"
+          role="button"
+          tabIndex={0}
+          onClick={toggle}
+          onKeyDown={onKey}
+        />
+      ) : (
+        <Sun
+          className="w-6 h-6 text-gray-900 cursor-pointer transition-colors"
+          title="Switch to dark mode"
+          role="button"
+          tabIndex={0}
+          onClick={toggle}
+          onKeyDown={onKey}
+        />
+      )}
+    </>
   );
 }
