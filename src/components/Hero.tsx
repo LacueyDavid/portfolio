@@ -2,7 +2,7 @@ const profileImg = new URL("../imgs/david.png", import.meta.url).href;
 
 function Hero() {
   return (
-    <section className="max-w-[850px] mx-auto pt-32 px-5 flex gap-[2%] items-start flex-col md:flex-row">
+    <section className="max-w-[850px] mx-auto pt-32 px-5 flex gap-[2%] items-start flex-col md:flex-row text-gray-900 dark:text-gray-100">
       <div className="flex flex-col flex-1 pb-18 items-center md:items-start text-center md:text-left">
         <h2 className="m-0 mb-6 font-bold text-[40px] leading-[60px]">
           Hi, I am Lacuey David,
@@ -16,7 +16,7 @@ function Hero() {
           programmation, en résolution de problèmes et en travail d'équipe à
           travers des projets concrets.
         </p>
-        <button className="w-52 h-12 mb-10 bg-[#ff6464] text-white border-none rounded cursor-pointer text-xl hover:bg-[#ff1414]">
+        <button className="w-52 h-12 mb-10 bg-[#ff6464] text-white border-none rounded cursor-pointer text-xl hover:bg-[#ff1414] dark:bg-[#ff6b6b]">
           Download Resume
         </button>
       </div>

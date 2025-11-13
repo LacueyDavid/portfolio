@@ -4,17 +4,22 @@ import { projects } from "../data/content";
 
 function Projects() {
   return (
-    <section id="works" className="max-w-[850px] mx-auto p-5">
+    <section id="works" className="max-w-[850px] mx-auto p-5 ">
       <p className="text-[22px] m-0 text-[#21243d]">Projects</p>
 
-      {projects.map((project, index) => (
-        <div key={index}>
-          <ProjectCard {...project} />
-          {index < projects.length - 1 && <Divider />}
-        </div>
-      ))}
-
-      <Divider />
+      <div
+        role="list"
+        aria-label="Liste des projets"
+        tabIndex={0}
+        className="m-4 overflow-y-auto pr-3 focus:outline-none focus:ring-2 focus:ring-indigo-300 max-h-[780px] md:max-h-[740px] sm:max-h-[66vh]"
+      >
+        {projects.map((project, index) => (
+          <div key={index} role="listitem">
+            <ProjectCard {...project} />
+            {index < projects.length - 1 && <Divider />}
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

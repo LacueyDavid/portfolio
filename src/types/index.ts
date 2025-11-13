@@ -11,6 +11,7 @@ export interface Project {
   type: string;
   description: string;
   imageUrl: string;
+  githubUrl?: string;
 }
 
 export interface SocialLink {

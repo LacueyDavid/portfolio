@@ -1,8 +1,8 @@
 import type { Post, Project } from "../types";
 
-const img1 = new URL("../imgs/1.png", import.meta.url).href;
-const img2 = new URL("../imgs/2.png", import.meta.url).href;
 const minishell = new URL("../imgs/minishell.png", import.meta.url).href;
+const fdf = new URL("../imgs/france.png", import.meta.url).href;
+const push_swap = new URL("../imgs/pushswap.png", import.meta.url).href;
 
 export const posts: Post[] = [
   {
@@ -23,27 +23,39 @@ export const posts: Post[] = [
 
 export const projects: Project[] = [
   {
-    title: "Designing Dashboards",
-    year: "2020",
-    type: "Dashboard",
+    title: "Minishell",
+    year: "2023",
+    type: "C",
     description:
-      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.\nVelit officia consequat duis enim velit mollit.\nExercitation veniam consequat sunt nostrud amet.",
-    imageUrl: img1,
-  },
-  {
-    title: "Vibrant Portraits of 2020",
-    year: "2018",
-    type: "illustration",
-    description:
-      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.\nVelit officia consequat duis enim velit mollit.\nExercitation veniam consequat sunt nostrud amet.",
-    imageUrl: img2,
+      "shell minimaliste inspiré de bash. L'objectif est de comprendre en profondeur le fonctionnement des processus, de la gestion des signaux, et de l'exécution de commandes dans un environnement UNIX.",
+    imageUrl: minishell,
+    githubUrl: "https://github.com/LacueyDavid/Minishell",
   },
   {
     title: "Minishell",
     year: "2023",
-    type: "C99",
+    type: "C",
     description:
       "shell minimaliste inspiré de bash. L'objectif est de comprendre en profondeur le fonctionnement des processus, de la gestion des signaux, et de l'exécution de commandes dans un environnement UNIX.",
     imageUrl: minishell,
+    githubUrl: "https://github.com/LacueyDavid/Minishell",
+  },
+  {
+    title: "FDF - Wireframe",
+    year: "2023",
+    type: "C",
+    description:
+      "Visualiseur C de heightmaps en Wireframe : projection isométrique, tracé Bresenham, MiniLibX.",
+    imageUrl: fdf,
+    githubUrl: "https://github.com/LacueyDavid/FDF",
+  },
+  {
+    title: "Push_swap",
+    year: "2023",
+    type: "C",
+    description:
+      "projet 42 consistant à trier une pile d'entiers en minimisant le nombre d'opérations (swap, push, rotate) en utilisant deux piles et des algorithmes optimisés.",
+    imageUrl: push_swap,
+    githubUrl: "https://github.com/LacueyDavid/push_swap",
   },
 ];
