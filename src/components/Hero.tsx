@@ -2,7 +2,7 @@ const profileImg = new URL("../imgs/david.png", import.meta.url).href;
 
 function Hero() {
   return (
-    <section className="card rounded-xl max-w-[900px] mx-auto p-6 grid gap-6 md:grid-cols-[140px_1fr] items-center justify-center">
+    <section className="flex max-w-[900px] mx-auto p-6 grid gap-6 md:grid-cols-[140px_1fr] items-center justify-center">
       <div className="w-[140px] h-[140px] rounded-full overflow-hidden border border-[var(--border)]">
         <img
           src={profileImg}

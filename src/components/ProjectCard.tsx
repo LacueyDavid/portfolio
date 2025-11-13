@@ -32,17 +32,14 @@ function ProjectCard({
 
       <div className="flex flex-col gap-6 pl-0 md:pl-5">
         <p className="font-bold text-[30px] m-0 text-[var(--text)]">{title}</p>
+        <p className="text-base leading-6 m-0 text-[var(--muted)]">
+          {description}
+        </p>
         <div className="flex items-center gap-3">
-          {/* <p className="bg-[#142850] text-white px-3 py-0 rounded-2xl font-bold text-lg m-0">
-            {year}
-          </p> */}
           <p className="bg-[var(--accent-2)] text-[var(--surface)] px-3 py-0 rounded-2xl font-bold text-lg m-0">
             {type}
           </p>
         </div>
-        <p className="text-base leading-6 m-0 text-[var(--muted)]">
-          {description}
-        </p>
       </div>
     </div>
   );

@@ -47,9 +47,9 @@
 
 /* Explicit dark class (higher specificity when .dark is applied to <html>) */
 .dark {
-  --bg: #252525;
-  --page-bg: #141414;
-  --surface: #252525;
+  --bg: #414141;
+  --page-bg: #161616;
+  --surface: #141414;
   --text: #e6eef8;
   --muted: #ffffff;
   --muted-2: #98a8bf;

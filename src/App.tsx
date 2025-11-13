@@ -7,6 +7,8 @@ function App() {
       <Hero />
       <SectionDivider label="Projects" />
       <Projects />
+      <SectionDivider label="Skills" />
+      <SectionDivider label="Contacts" />
       <Footer />
     </div>
   );
