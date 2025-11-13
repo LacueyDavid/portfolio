@@ -17,7 +17,9 @@ export default function ThemeToggle() {
   });
 
   React.useEffect(() => {
+    // Apply explicit classes so user's choice wins over prefers-color-scheme
     document.documentElement.classList.toggle("dark", theme === "dark");
+    document.documentElement.classList.toggle("light", theme === "light");
     try {
       localStorage.setItem("theme", theme);
     } catch {
@@ -38,7 +40,7 @@ export default function ThemeToggle() {
     <>
       {theme === "dark" ? (
         <Moon
-          className="w-6 h-6 text-white cursor-pointer transition-colors"
+          className="w-6 h-6 text-[var(--text)] cursor-pointer transition-colors"
           title="Switch to light mode"
           role="button"
           tabIndex={0}
@@ -47,7 +49,7 @@ export default function ThemeToggle() {
         />
       ) : (
         <Sun
-          className="w-6 h-6 text-gray-900 cursor-pointer transition-colors"
+          className="w-6 h-6 text-[var(--text)] cursor-pointer transition-colors"
           title="Switch to dark mode"
           role="button"
           tabIndex={0}

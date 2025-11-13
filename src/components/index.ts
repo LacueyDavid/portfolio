@@ -6,3 +6,4 @@ export { default as ProjectCard } from "./ProjectCard";
 export { default as Projects } from "./Projects";
 export { default as Divider } from "./Divider";
 export { default as Footer } from "./Footer";
+export { default as SectionDivider } from "./SectionDivider";

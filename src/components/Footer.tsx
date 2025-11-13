@@ -1,7 +1,7 @@
-const githubMark = new URL("../imgs/github-mark.svg", import.meta.url).href;
-const instaImg = new URL("../imgs/insta.svg", import.meta.url).href;
-const vectorImg = new URL("../imgs/Vector.svg", import.meta.url).href;
-const linkedinImg = new URL("../imgs/Linkedin.svg", import.meta.url).href;
+import GithubMark from "./icons/GithubMark";
+import Insta from "./icons/Insta";
+import VectorIcon from "./icons/VectorIcon";
+import Linkedin from "./icons/Linkedin";
 
 function Footer() {
   return (
@@ -12,23 +12,26 @@ function Footer() {
           href="https://github.com/LacueyDavid"
           className="flex h-8 w-8 transition-transform duration-100 hover:scale-110"
         >
-          <img src={githubMark} alt="GitHub" />
+          <GithubMark className="h-8 w-8 text-[var(--text)]" />
         </a>
-        <img
-          src={instaImg}
-          alt="Instagram"
-          className="h-8 w-8 transition-transform duration-100 hover:scale-110 cursor-pointer"
-        />
-        <img
-          src={vectorImg}
-          alt="Vector"
-          className="h-8 w-8 transition-transform duration-100 hover:scale-110 cursor-pointer"
-        />
-        <img
-          src={linkedinImg}
-          alt="LinkedIn"
-          className="h-8 w-8 transition-transform duration-100 hover:scale-110 cursor-pointer"
-        />
+        <a
+          href="#"
+          className="transition-transform duration-100 hover:scale-110"
+        >
+          <Insta className="h-8 w-8 text-[var(--text)]" />
+        </a>
+        <a
+          href="#"
+          className="transition-transform duration-100 hover:scale-110"
+        >
+          <VectorIcon className="h-8 w-8 text-[var(--text)]" />
+        </a>
+        <a
+          href="#"
+          className="transition-transform duration-100 hover:scale-110"
+        >
+          <Linkedin className="h-8 w-8 text-[var(--text)]" />
+        </a>
       </div>
     </>
   );

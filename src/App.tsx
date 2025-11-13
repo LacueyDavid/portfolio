@@ -1,10 +1,11 @@
-import { Header, Hero, RecentPosts, Projects, Footer } from "./components";
+import { Header, Hero, Projects, Footer, SectionDivider } from "./components";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200">
+    <div className="min-h-screen bg-[var(--page-bg)] text-[var(--text)] transition-colors duration-200 pt-32">
       <Header />
       <Hero />
+      <SectionDivider label="Projects" />
       <Projects />
       <Footer />
     </div>

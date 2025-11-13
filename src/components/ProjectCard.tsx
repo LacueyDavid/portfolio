@@ -3,7 +3,6 @@ import Oeil from "./icons/Oeil";
 
 function ProjectCard({
   title,
-  year,
   type,
   description,
   imageUrl,
@@ -23,24 +22,25 @@ function ProjectCard({
           style={{ backgroundImage: `url('${imageUrl}')` }}
         />
 
-        <div className="absolute inset-0 flex items-center justify-center bg-white/70 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-200 pointer-events-none">
-          <Oeil className="w-8 h-8 text-gray-800" title={`Voir ${title}`} />
+        <div className="absolute inset-0 flex items-center justify-center bg-[var(--overlay)] opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-200 pointer-events-none">
+          <Oeil
+            className="w-8 h-8 text-[var(--muted)]"
+            title={`Voir ${title}`}
+          />
         </div>
       </a>
 
       <div className="flex flex-col gap-6 pl-0 md:pl-5">
-        <p className="font-bold text-[30px] m-0 text-gray-900 dark:text-gray-100">
-          {title}
-        </p>
+        <p className="font-bold text-[30px] m-0 text-[var(--text)]">{title}</p>
         <div className="flex items-center gap-3">
-          <p className="bg-[#142850] text-white px-3 py-0 rounded-2xl font-bold text-lg m-0">
+          {/* <p className="bg-[#142850] text-white px-3 py-0 rounded-2xl font-bold text-lg m-0">
             {year}
-          </p>
-          <p className="text-[#8695a4] dark:text-gray-400 text-xl m-0">
+          </p> */}
+          <p className="bg-[var(--accent-2)] text-[var(--surface)] px-3 py-0 rounded-2xl font-bold text-lg m-0">
             {type}
           </p>
         </div>
-        <p className="text-base leading-6 m-0 text-gray-800 dark:text-gray-300">
+        <p className="text-base leading-6 m-0 text-[var(--muted)]">
           {description}
         </p>
       </div>

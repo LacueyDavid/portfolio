@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap");
+@import "./styles/theme.css";
 
 @tailwind base;
 @tailwind components;
@@ -19,7 +20,7 @@
     margin: 0;
     padding: 0;
     font-family: "Heebo", sans-serif;
-    background-color: #fff;
-    color: #21243d;
+    background-color: var(--page-bg);
+    color: var(--text);
   }
 }
