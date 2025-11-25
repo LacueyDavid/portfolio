@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Download } from "lucide-react";
 
 const About = () => {
   return (
@@ -32,6 +33,20 @@ const About = () => {
               When I'm not coding, you can find me exploring new tech trends, or
               climbing.
             </p>
+
+            <div className="pt-6 flex justify-center">
+              <a
+                href="/cv.pdf"
+                download
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white transition-all hover:scale-105 group"
+              >
+                <Download
+                  size={20}
+                  className="group-hover:translate-y-1 transition-transform"
+                />
+                Download Resume
+              </a>
+            </div>
           </div>
         </motion.div>
       </div>

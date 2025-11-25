@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code2, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, FileText } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -9,10 +9,21 @@ const Navbar = () => {
       transition={{ duration: 0.8 }}
       className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-6 backdrop-blur-sm"
     >
-      <div className="flex items-center gap-2 text-white font-bold text-xl">
-        <Code2 className="text-purple-500" />
+      <a
+        href="#"
+        onClick={(e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+        className="flex items-center gap-3 text-white font-bold text-xl cursor-pointer"
+      >
+        <img
+          src="/logo.svg"
+          alt="LD Logo"
+          className="w-10 h-10 hover:rotate-12 transition-transform duration-300"
+        />
         <span>Lacuey David</span>
-      </div>
+      </a>
 
       <div className="hidden md:flex items-center gap-8 text-gray-300">
         <a href="#about" className="hover:text-purple-400 transition-colors">
@@ -30,6 +41,14 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center gap-4">
+        <a
+          href="/cv.pdf"
+          download
+          className="hidden sm:flex items-center gap-2 px-4 py-2 bg-purple-600/20 hover:bg-purple-600/40 text-purple-300 hover:text-white rounded-full transition-all border border-purple-500/30 mr-2"
+        >
+          <FileText size={18} />
+          <span className="text-sm font-medium">Resume</span>
+        </a>
         <a
           href="https://github.com/LacueyDavid"
           target="_blank"
