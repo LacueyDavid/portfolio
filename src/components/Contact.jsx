@@ -3,7 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm("YOUR_FORMSPREE_ID"); // Remplace par ton ID Formspree
+  const [state, handleSubmit] = useForm(import.meta.env.VITE_FORMSPREE_ID);
 
   if (state.succeeded) {
     return (
