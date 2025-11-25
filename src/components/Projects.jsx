@@ -7,9 +7,9 @@ const projects = [
     description:
       "A comprehensive Pokémon SPA featuring 1st Gen Pokédex with advanced filtering, search, and detailed stats modal. Built with performance in mind using SWR for caching.",
     tags: ["React", "TypeScript", "Vite", "SWR", "Tailwind"],
-    image: "./src/img/pokeCard.png",
+    image: "/img/pokecard.png",
     github: "https://github.com/LacueyDavid/pokeCard",
-    demo: "#",
+    // demo: "#",
   },
   {
     title: "Transcendence",
@@ -23,18 +23,18 @@ const projects = [
       "Javascript",
       "Bootstrap",
     ],
-    image: "./src/img/Transcendence.png",
+    image: "/img/transcendence.png",
     github: "https://github.com/LacueyDavid/ft_transcendence",
-    demo: "#",
+    // demo: "#",
   },
   {
     title: "Irc",
     description:
       "Serveur IRC compatible avec un client officiel. Gestion des canaux, messages privés, opérateurs et commandes IRC. Architecture non-bloquante (poll/epoll).",
     tags: ["C++", "Sockets", "TCP/IP", "Network"],
-    image: "./src/img/irc.jpg",
+    image: "/img/irc.jpg",
     github: "https://github.com/LacueyDavid/ft_irc",
-    demo: "#",
+    // demo: "#",
   },
 ];
 
