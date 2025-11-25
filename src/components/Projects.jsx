@@ -3,32 +3,37 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "pokeCard",
+    title: "PokeCard",
     description:
       "A comprehensive Pokémon SPA featuring 1st Gen Pokédex with advanced filtering, search, and detailed stats modal. Built with performance in mind using SWR for caching.",
     tags: ["React", "TypeScript", "Vite", "SWR", "Tailwind"],
-    image:
-      "https://images.unsplash.com/photo-1613771404721-1f92d799e49f?w=800&q=80",
+    image: "./src/img/pokeCard.png",
     github: "https://github.com/LacueyDavid/pokeCard",
     demo: "#",
   },
   {
-    title: "E-Commerce Platform",
+    title: "Transcendence",
     description:
-      "A full-featured online store with cart, checkout, and admin dashboard.",
-    tags: ["Next.js", "Stripe", "Tailwind"],
-    image:
-      "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
-    github: "#",
+      "Site web de Pong multijoueur SPA. Chat en temps réel, matchmaking, authentification OAuth2/2FA, et gestion de profils.",
+    tags: [
+      "Django",
+      "PostgreSQL",
+      "Socket.io",
+      "Docker",
+      "Javascript",
+      "Bootstrap",
+    ],
+    image: "./src/img/Transcendence.png",
+    github: "https://github.com/LacueyDavid/ft_transcendence",
     demo: "#",
   },
   {
-    title: "AI Chat Application",
-    description: "Real-time chat interface powered by OpenAI's GPT-4 API.",
-    tags: ["React", "Socket.io", "OpenAI"],
-    image:
-      "https://images.unsplash.com/photo-1587560699334-cc4da63c2409?w=800&q=80",
-    github: "#",
+    title: "Irc",
+    description:
+      "Serveur IRC compatible avec un client officiel. Gestion des canaux, messages privés, opérateurs et commandes IRC. Architecture non-bloquante (poll/epoll).",
+    tags: ["C++", "Sockets", "TCP/IP", "Network"],
+    image: "./src/img/irc.jpg",
+    github: "https://github.com/LacueyDavid/ft_irc",
     demo: "#",
   },
 ];

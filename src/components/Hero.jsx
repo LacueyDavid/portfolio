@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import profileImage from "../img/moi.jpg";
 
 const Hero = () => {
   return (
@@ -42,27 +43,6 @@ const Hero = () => {
               Contact Me
             </a>
           </div>
-
-          <div className="flex gap-6 text-gray-400">
-            <a
-              href="#"
-              className="hover:text-white transition-colors hover:scale-110 transform"
-            >
-              <Github size={24} />
-            </a>
-            <a
-              href="#"
-              className="hover:text-white transition-colors hover:scale-110 transform"
-            >
-              <Linkedin size={24} />
-            </a>
-            <a
-              href="#"
-              className="hover:text-white transition-colors hover:scale-110 transform"
-            >
-              <Mail size={24} />
-            </a>
-          </div>
         </motion.div>
 
         <motion.div
@@ -75,7 +55,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur-3xl opacity-30 animate-pulse"></div>
             <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/10 shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80"
+                src={profileImage}
                 alt="Profile"
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
               />

@@ -31,7 +31,7 @@ const Navbar = () => {
 
       <div className="flex items-center gap-4">
         <a
-          href="https://github.com"
+          href="https://github.com/LacueyDavid"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-300 hover:text-white transition-colors"
@@ -39,7 +39,7 @@ const Navbar = () => {
           <Github size={20} />
         </a>
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/lacuey-david/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-300 hover:text-white transition-colors"
@@ -47,7 +47,7 @@ const Navbar = () => {
           <Linkedin size={20} />
         </a>
         <a
-          href="mailto:contact@example.com"
+          href="mailto:dlacuey@student.42.fr"
           className="text-gray-300 hover:text-white transition-colors"
         >
           <Mail size={20} />
