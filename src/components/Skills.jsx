@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  "React",
-  "Node.js",
-  "TypeScript",
-  "Three.js",
-  "Tailwind CSS",
-  "PostgreSQL",
-  "Next.js",
-  "GraphQL",
+  "Linux Admin",
+  "Docker/K8s",
+  "Bash/Python",
+  "C/C++",
+  "TCP/IP Networking",
+  "Cybersecurity",
+  "AWS/Cloud",
+  "CI/CD Pipelines",
 ];
 
 const Skills = () => {

@@ -22,10 +22,10 @@ const Hero = () => {
             </span>
           </h1>
           <p className="text-gray-400 text-lg mb-8 leading-relaxed font-mono">
-            <span className="text-green-400">$</span> Born to code. <br />I
-            craft beautiful, high-performance websites and applications with
-            modern technologies. Passionate about creating seamless digital
-            experiences that solve real-world problems.
+            <span className="text-green-400">$</span> Architecting robust
+            systems. <br />I design secure, scalable infrastructures and
+            optimize network performance with modern technologies. Passionate
+            about building resilient foundations for digital transformation.
           </p>
 
           <div className="flex gap-4 mb-12">

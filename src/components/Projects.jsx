@@ -3,35 +3,35 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "PokeCard",
+    title: "Inception",
     description:
-      "A comprehensive Pokémon SPA featuring 1st Gen Pokédex with advanced filtering, search, and detailed stats modal. Built with performance in mind using SWR for caching.",
-    tags: ["React", "TypeScript", "Vite", "SWR", "Tailwind"],
-    image: "/img/pokecard.png",
-    github: "https://github.com/LacueyDavid/pokeCard",
+      "Mise en place d'une infrastructure Docker complète pour héberger divers services (NGINX, MariaDB, WordPress) dans des conteneurs isolés. Configuration des réseaux et des volumes.",
+    tags: ["Docker", "System Admin", "Virtualization", "Bash", "Linux"],
+    image: "/img/pokecard.png", // Placeholder, ideally should be changed
+    github: "https://github.com/LacueyDavid/inception",
     // demo: "#",
   },
   {
     title: "Transcendence",
     description:
-      "Site web de Pong multijoueur SPA. Chat en temps réel, matchmaking, authentification OAuth2/2FA, et gestion de profils.",
+      "Site web de Pong multijoueur. Focus sur l'architecture micro-services conteneurisée avec Docker, gestion des WebSockets pour le temps réel et sécurité OAuth2/2FA.",
     tags: [
-      "Django",
-      "PostgreSQL",
-      "Socket.io",
       "Docker",
-      "Javascript",
-      "Bootstrap",
+      "PostgreSQL",
+      "WebSockets",
+      "Micro-services",
+      "Security",
+      "Nginx",
     ],
     image: "/img/transcendence.png",
     github: "https://github.com/LacueyDavid/ft_transcendence",
     // demo: "#",
   },
   {
-    title: "Irc",
+    title: "ft_irc",
     description:
-      "Serveur IRC compatible avec un client officiel. Gestion des canaux, messages privés, opérateurs et commandes IRC. Architecture non-bloquante (poll/epoll).",
-    tags: ["C++", "Sockets", "TCP/IP", "Network"],
+      "Implémentation d'un serveur IRC from scratch en C++. Gestion bas niveau des sockets TCP/IP non-bloquants (poll), parsing de commandes et gestion de clients concurrents.",
+    tags: ["C++", "Sockets", "TCP/IP", "Network Protocol", "Unix"],
     image: "/img/irc.jpg",
     github: "https://github.com/LacueyDavid/ft_irc",
     // demo: "#",

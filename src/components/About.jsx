@@ -16,22 +16,24 @@ const About = () => {
           </h2>
           <div className="glass-card p-8 rounded-2xl text-gray-300 leading-relaxed space-y-4">
             <p>
-              I'm a passionate Full Stack Developer and a student at{" "}
+              I'm a passionate System and Network Architect and a student at{" "}
               <span className="text-purple-400 font-semibold">42 Paris</span>,
-              where I've honed my skills through peer-to-peer learning and
-              rigorous coding challenges. Having completed the Common Core, I
-              have a strong foundation in C, C++, and algorithmic thinking.
+              where I've honed my skills through rigorous technical challenges.
+              Having completed the Common Core, I have a strong foundation in
+              low-level programming (C/C++), operating systems, and network
+              protocols.
             </p>
             <p>
-              My journey in tech is driven by a curiosity for how things work,
-              which evolved into a career building scalable web solutions. I
-              love experimenting with new technologies like 3D web graphics and
-              AI integration to push the boundaries of what's possible on the
-              web.
+              My expertise lies in designing scalable and secure network
+              infrastructures. I thrive on solving complex system administration
+              problems, automating deployments, and ensuring high availability.
+              I am constantly exploring new technologies in Cloud Computing,
+              Cybersecurity, and Virtualization.
             </p>
             <p>
-              When I'm not coding, you can find me exploring new tech trends, or
-              climbing.
+              When I'm not configuring servers or analyzing packet captures, you
+              can find me staying up-to-date with the latest cybersecurity
+              trends or climbing.
             </p>
 
             <div className="pt-6 flex justify-center">
