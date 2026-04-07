@@ -16,7 +16,7 @@ function App() {
         <About />
         <Skills />
         <Projects />
-        <Contact />
+        {/* <Contact /> */}
       </main>
 
       <footer className="relative z-10 py-8 text-center text-gray-500 text-sm">

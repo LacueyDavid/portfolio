@@ -6,6 +6,9 @@ const Contact = () => {
   const configuredFormId = import.meta.env.VITE_FORMSPREE_ID?.trim();
   const hasFormspreeId = Boolean(configuredFormId);
   const [state, handleSubmit] = useForm(configuredFormId || "myForm");
+  const MotionDiv = motion.div;
+  const MotionH2 = motion.h2;
+  const MotionForm = motion.form;
 
   const onSubmit = (event) => {
     if (!hasFormspreeId) {
@@ -19,7 +22,7 @@ const Contact = () => {
   if (state.succeeded) {
     return (
       <section id="contact" className="py-20 px-4 text-center">
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           className="glass-card p-8 rounded-2xl max-w-md mx-auto"
@@ -30,7 +33,7 @@ const Contact = () => {
           <p className="text-gray-300">
             Thanks for reaching out. I'll get back to you soon.
           </p>
-        </motion.div>
+        </MotionDiv>
       </section>
     );
   }
@@ -38,17 +41,17 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        <motion.h2
+        <MotionH2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold text-white mb-12 text-center"
         >
           Get In Touch
-        </motion.h2>
+        </MotionH2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -75,9 +78,9 @@ const Contact = () => {
                 <span>Paris, France</span>
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.form
+          <MotionForm
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -151,7 +154,7 @@ const Contact = () => {
                 to enable form submission.
               </p>
             )}
-          </motion.form>
+          </MotionForm>
         </div>
       </div>
     </section>
