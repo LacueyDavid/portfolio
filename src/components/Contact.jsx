@@ -1,9 +1,20 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm(import.meta.env.VITE_FORMSPREE_ID);
+  const configuredFormId = import.meta.env.VITE_FORMSPREE_ID?.trim();
+  const hasFormspreeId = Boolean(configuredFormId);
+  const [state, handleSubmit] = useForm(configuredFormId || "myForm");
+
+  const onSubmit = (event) => {
+    if (!hasFormspreeId) {
+      event.preventDefault();
+      return;
+    }
+
+    handleSubmit(event);
+  };
 
   if (state.succeeded) {
     return (
@@ -71,7 +82,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="glass-card p-8 rounded-2xl space-y-6"
-            onSubmit={handleSubmit}
+            onSubmit={onSubmit}
           >
             <div>
               <label className="block text-sm font-medium text-gray-400 mb-2">
@@ -129,11 +140,17 @@ const Contact = () => {
             </div>
             <button
               type="submit"
-              disabled={state.submitting}
+              disabled={state.submitting || !hasFormspreeId}
               className="w-full bg-purple-600 text-white font-medium py-3 rounded-lg hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {state.submitting ? "Sending..." : "Send Message"}
             </button>
+            {!hasFormspreeId && (
+              <p className="text-sm text-amber-300">
+                Add <code>VITE_FORMSPREE_ID</code> in a <code>.env</code> file
+                to enable form submission.
+              </p>
+            )}
           </motion.form>
         </div>
       </div>
